@@ -1,0 +1,418 @@
+/* Di chuyển toàn bộ CSS từ thẻ <style> trong admin.html vào đây */
+:root {
+    --primary: #1877f2;
+    --success: #42b72a;
+    --danger: #ff3333;
+    --dark: #1c1e21;
+    --light: #f0f2f5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+    color: #222;
+    min-height: 100vh;
+}
+
+.admin-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 16px 8px 32px 8px;
+}
+
+.admin-header {
+    background: #fff;
+    padding: 18px 0 12px 0;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 2px 12px rgba(30, 64, 175, 0.08);
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.admin-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e40af;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.admin-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.admin-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(30, 64, 175, 0.08);
+    padding: 18px 14px 14px 14px;
+    margin-bottom: 0;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1e293b;
+}
+
+.card-title i {
+    color: var(--primary);
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.form-control {
+    width: 100%;
+    padding: 14px 12px;
+    border: 1.5px solid #c7d2fe;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    background: #f1f5f9;
+    margin-bottom: 0;
+    outline: none;
+    transition: border 0.2s;
+}
+.form-control:focus {
+    border: 1.5px solid #6366f1;
+    background: #fff;
+}
+
+.btn {
+    padding: 14px 0;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+    transition: background 0.2s, box-shadow 0.2s;
+    width: 100%;
+    margin-top: 4px;
+}
+.btn:active {
+    background: linear-gradient(90deg, #4338ca 0%, #2563eb 100%);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-danger {
+    background: linear-gradient(90deg, #f43f5e 0%, #f59e42 100%);
+    color: #fff;
+    font-size: 1rem;
+    padding: 8px 14px;
+    border-radius: 8px;
+    margin-left: 8px;
+    box-shadow: 0 1px 4px rgba(244, 63, 94, 0.08);
+}
+.btn-danger:active {
+    background: linear-gradient(90deg, #be123c 0%, #ea580c 100%);
+}
+
+.btn-success {
+    background: var(--success);
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.status-badge {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.status-active {
+    background: #e8f5e9;
+    color: var(--success);
+}
+
+.status-maintenance {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.reviews-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.review-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.review-item:last-child {
+    border-bottom: none;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.review-name {
+    font-weight: 600;
+}
+
+.review-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.review-content {
+    color: #666;
+    font-size: 14px;
+}
+
+.toast {
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(30, 41, 59, 0.18);
+    display: none;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    z-index: 1000;
+    font-size: 1.1rem;
+}
+.toast.show {
+    display: block;
+}
+
+/* Toggle Switch Styles */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+    margin: 10px 0;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 40px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 32px;
+    width: 32px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--success);
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+/* Codes List Styles */
+.codes-list {
+    max-height: 320px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.code-item {
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 12px 10px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 4px rgba(99, 102, 241, 0.04);
+    word-break: break-all;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.code-info {
+    flex: 1;
+}
+
+.code-value {
+    font-weight: 700;
+    color: #1e40af;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+.code-link {
+    color: var(--text-secondary);
+    font-size: 14px;
+    word-break: break-all;
+}
+
+.code-type {
+    font-size: 14px;
+    color: #555;
+    margin-top: 4px;
+}
+
+.code-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+.code-date {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-secondary);
+}
+
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+/* Tab Switch Button Styles */
+.tab-switch-btn {
+    margin-left: auto;
+    min-width: 160px;
+    text-align: center;
+    font-size: 15px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 16px;
+}
+
+.tab-switch-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    background: linear-gradient(135deg, #ff5722, #ff9800);
+    color: white;
+    text-decoration: none;
+}
+
+.tab-switch-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3);
+} 
+
+/* Responsive cho mobile */
+@media (max-width: 600px) {
+    .admin-container {
+        padding: 6px 2px 24px 2px;
+    }
+    .admin-header {
+        padding: 12px 0 8px 0;
+        border-radius: 12px 12px 0 0;
+    }
+    .admin-title {
+        font-size: 1.3rem;
+    }
+    .admin-card {
+        padding: 12px 6px 10px 6px;
+        border-radius: 12px;
+    }
+    .card-title {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    .form-control {
+        font-size: 1rem;
+        padding: 10px 8px;
+    }
+    .btn {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+    .code-item {
+        font-size: 1rem;
+        padding: 8px 6px;
+        border-radius: 8px;
+    }
+} 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="generator" content="Odoo"/>
+        <meta name="default_title" content="KIEU QUANG ADMIN"/>
+        <meta name="description" content="WEB TẠO MÃ"/>
+        <meta name="keywords"/>
+        <meta name="default_description"/>
+            
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="KIEU QUANG ADMIN"/>
+        <meta property="og:site_name" content="WEB TẠO MÃ"/>
+        <meta property="og:url" content="https://kieuquangadmin.onrender.com/"/>
+        <meta property="og:image" content="https://www.shutterstock.com/shutterstock/photos/1730974153/display_1500/stock-vector-man-with-the-inscription-admin-icon-outline-man-with-the-inscription-admin-vector-icon-for-web-1730974153.jpg"/>
+        <meta property="og:description" content="WEB TẠO MÃ"/>
+            
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="KIEU QUANG ADMIN"/>
+        <meta name="twitter:image" content="https://www.shutterstock.com/shutterstock/photos/1730974153/display_1500/stock-vector-man-with-the-inscription-admin-icon-outline-man-with-the-inscription-admin-vector-icon-for-web-1730974153.jpg"/>
+        <meta name="twitter:description" content="WEB TẠO MÃ"/>
+        
+        <link rel="canonical" href="https://kieuquangadmin.onrender.com/"/>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""/>
+        <title>KIEU QUANG ADMIN</title>
+        <link type="image/x-icon" rel="shortcut icon" href="/web/image/website/1/favicon?unique=9b055ab"/>
+        <link rel="preload" href="/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" crossorigin=""/>
+        <link type="text/css" rel="stylesheet" href="/web/assets/1/74d1c8b/web.assets_frontend.min.css"/>
+        <script id="web.layout.odooscript" type="text/javascript">
+            var odoo = {
+                csrf_token: "bdd0e03cfd30b2c027250a8f801ca9820d6c647do1784436809",
+                debug: "",
+            };
+        </script>
+        <script type="text/javascript">
+            odoo.__session_info__ = {"is_admin": true, "is_system": true, "is_public": false, "is_internal_user": true, "is_website_user": false, "uid": 2, "is_frontend": true, "profile_session": null, "profile_collectors": null, "profile_params": null, "show_effect": true, "currencies": {"23": {"symbol": "\u20ab", "position": "after", "digits": [69, 0]}}, "quick_login": true, "bundle_params": {"lang": "en_US", "website_id": 1}, "test_mode": false, "server_version": "18.0+e", "server_version_info": [18, 0, 0, "final", 0, "e"], "websocket_worker_version": "18.0-5", "translationURL": "/website/translations", "cache_hashes": {"translations": "402866ecf1a6c9f2ea2002d34e9cc8eaa9ea5444"}, "geoip_country_code": "VN", "geoip_phone_code": 84, "lang_url_code": "en", "website_id": 1, "website_company_id": 1};
+            if (!/(^|;\s)tz=/.test(document.cookie)) {
+                const userTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                document.cookie = `tz=${userTZ}; path=/`;
+            }
+        </script>
+        <script type="text/javascript" defer="defer" src="/web/assets/1/9fe4aad/web.assets_frontend_minimal.min.js" onerror="__odooAssetError=1"></script>
+        <script type="text/javascript" defer="defer" data-src="/web/assets/1/316ec80/web.assets_frontend_lazy.min.js" onerror="__odooAssetError=1"></script>
+        
+        
+    </head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1 class="admin-title"><i class="fas fa-user-shield"></i> KIEU QUANG ADMIN</h1>
+        </div>
+        <div class="admin-grid">
+            </div>
+            <div class="admin-card">
+                <h2 class="card-title">
+                    <i class="fas fa-key"></i> Thêm mã mới
+                </h2>
+                <form id="addCodeForm" autocomplete="off" style="display: flex; flex-direction: column; gap: 12px;">
+                    <div class="form-group">
+                        <label for="codeInput">Mã code:</label>
+                        <input type="text" id="codeInput" class="form-control" placeholder="Nhập mã code" maxlength="32" style="font-size:18px; text-align:center; letter-spacing:2px;">
+                    </div>
+                    <button class="btn btn-primary" id="saveCodeLink" type="button" style="font-size:18px; padding:14px 0;">
+                        <i class="fas fa-save"></i> Lưu mã
+                    </button>
+                </form>
+            </div> <br>
+            <div class="admin-card">
+                <h2 class="card-title">
+                    <i class="fas fa-list"></i> Danh sách mã
+                </h2>
+                <div id="codesList" class="codes-list">
+                    <!-- Codes will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html> 
